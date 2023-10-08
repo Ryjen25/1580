@@ -1,0 +1,18 @@
+def line(Vx,Vy,x,y):
+  a=Vy
+  b=-Vx
+  c=-(a*x+b*y)
+  return a,b,c
+
+def inline(a,b):
+  d=a[0]*b[1]-a[1]*b[0]
+  return d
+  
+  
+Ax, Ay, Bx, By, Dx,Dy, Ex, Ey = map(int,input().split())
+Mx=(Ax+2*Bx)/3
+My=(Ay+2*By)/3
+MG=line(Dx-Bx, Dy-By, Mx, My)
+ED=line(Dx-Ex, Dy-Ey, Ex, Ey)
+Gx=inline(ED,MG)
+print(3*Gx-Ax-Bx)
